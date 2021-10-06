@@ -1,0 +1,15 @@
+
+
+
+<button mat-raised-button color="primary" (click)="showHide()">{{word}}</button>
+
+
+<div style="border: 1px solid red" [hidden]="hide">
+  <ul>
+
+    <li> idFournisseur: {{fournisseur.idFournisseur}}</li>
+    <li> Code: {{fournisseur.code}}</li>
+    <li> Libelle: {{fournisseur.libelle}}</li>
+  </ul>
+</div>
+

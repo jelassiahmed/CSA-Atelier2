@@ -1,0 +1,23 @@
+<!--<p>list-fournisseur works!</p>-->
+
+
+<fieldset *ngFor="let fournisseur of listFournisseur"
+          [hidden]="fournisseur.idFournisseur>100"
+          [style.background-color]="fournisseur.libelle== 'hp'?'green':'red'"
+          (dblclick)="deleteFournisseur(fournisseur.idFournisseur)"
+>
+  <legend>idFornisseur: {{fournisseur.idFournisseur}}</legend>
+  <table >
+    <tr>
+      <td>code: </td>
+<!--      Easy way !!-->
+<!--      <td [style.font-weight]="fournisseur.code.startsWith('2A')?'bold':''">{{fournisseur.code}}</td>-->
+      <td [style.font-weight]="getColor(fournisseur.code)">{{fournisseur.code}}</td>
+    </tr>
+    <tr>
+      <td>Libelle: </td>
+      <td>{{fournisseur.libelle}}</td>
+    </tr>
+  </table>
+</fieldset>
+
